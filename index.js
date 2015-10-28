@@ -13,11 +13,16 @@ try {
     }
 }
 catch (e) {
-    console.log(e);
 }
-
 if (schema) {
     module.exports = getbabelRelayPlugin(schema.data);
 } else {
-    module.exports = getbabelRelayPlugin();
+    module.exports = function (_ref) {
+        var Plugin = _ref.Plugin;
+        var t = _ref.types;
+        return new Plugin("plugin-example", {
+            visitor: {
+            }
+        });
+    }
 }
