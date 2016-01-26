@@ -1,6 +1,6 @@
 {
   "name": "babel-relay-plugin-loader",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "This is a workaround to be able to use the Babel Relay Plugin in .babelrc and using babel-node.",
   "license": "MIT",
   "repository": {

@@ -1,6 +1,10 @@
 babel-relay-plugin-loader
 =========================
 
+Versions
+========
+The current `babel-relay-plugin-loader` version `0.6.4` is loading the `babel-relay-plugin` version `0.6.3`.
+
 Overview
 ========
 This workaround enables us to use the Babel Relay Plugin in `.babelrc` without breaking `babel-node`.
