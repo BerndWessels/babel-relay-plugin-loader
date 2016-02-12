@@ -13,20 +13,13 @@ try {
             var schema = require(schemaPath);
         }
     } else if (config.metadata.graphql.url) {
-        var safeRequire = require('safe-require');
-        var graphqlUtils = safeRequire('graphql/utilities');
-        if (!graphqlUtils) {
-          console.log('babel-relay-plugin-loader: npm i graphql -S');
-        }
-        var request = safeRequire('sync-request');
-        if (!request) {
-          console.log('babel-relay-plugin-loader: npm i sync-request -S');
-        }
+        var introspectionQuery = require('graphql/utilities').introspectionQuery;
+        var request = require('sync-request');
 
         var res = request('POST', config.metadata.graphql.url, {
           headers: config.metadata.graphql.header,
           qs: {
-            query: graphqlUtils.introspectionQuery
+              query: introspectionQuery
           }
         });
 
@@ -34,7 +27,12 @@ try {
     }
 }
 catch (e) {
-    console.log(e);
+    if (e.code === 'MODULE_NOT_FOUND') {
+        console.log('babel-relay-plugin-loader: ', e.message);
+        console.log('babel-relay-plugin-loader: npm install graphql sync-request --save');
+    } else {
+        console.log(e);
+    }
 }
 
 var pathOrUrl = schemaPath ? schemaPath : config.metadata.graphql.url;
