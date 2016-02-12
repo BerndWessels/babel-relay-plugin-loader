@@ -9,6 +9,7 @@
   },
   "main": "index.js",
   "dependencies": {
-    "babel-relay-plugin": "^0.6.3"
+    "babel-relay-plugin": "^0.6.3",
+    "safe-require": "^1.0.1"
   }
 }
