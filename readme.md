@@ -3,7 +3,7 @@ babel-relay-plugin-loader
 
 Versions
 ========
-The current `babel-relay-plugin-loader` version `0.6.4` is loading the `babel-relay-plugin` version `0.6.3`.
+The current `babel-relay-plugin-loader` version `0.7.0` is loading the `babel-relay-plugin` version `0.7.0`.
 
 Overview
 ========
@@ -31,6 +31,8 @@ This path should be relative to the location of your `package.json`.
 
 Then you can add this plugin to your `.babelrc` file like this:
 
+Babel 5
+
     {
       "stage": 0,
       "env": {
@@ -54,6 +56,51 @@ Then you can add this plugin to your `.babelrc` file like this:
               }]
             }
           }
+        }
+      }
+    }
+
+Babel 6
+
+    {
+      "presets": [
+        "es2015",
+        "react",
+        "stage-0"
+      ],
+      "env": {
+        "development": {
+          "plugins": [
+            "babel-relay-plugin-loader",
+            [
+              "react-transform",
+              {
+                "transforms": [
+                  {
+                    "transform": "react-transform-hmr",
+                    "imports": [
+                      "react"
+                    ],
+                    "locals": [
+                      "module"
+                    ]
+                  },
+                  {
+                    "transform": "react-transform-catch-errors",
+                    "imports": [
+                      "react",
+                      "redbox-react"
+                    ]
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "production": {
+          "plugins": [
+            "babel-relay-plugin-loader"
+          ]
         }
       }
     }
