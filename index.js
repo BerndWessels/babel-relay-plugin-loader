@@ -17,15 +17,15 @@ catch (e) {
 }
 
 if (schema) {
-    console.log('babel-relay-plugin-loader: using schema at [' + schemaPath + ']');
+    console.log(`babel-relay-plugin-loader: using schema at [${schemaPath}]`);
     module.exports = getbabelRelayPlugin(schema.data);
 } else {
-    console.log('babel-relay-plugin-loader: no schema found at [' + schemaPath + ']');
+    console.log(`babel-relay-plugin-loader: no schema found at [${schemaPath}]`);
     console.log('babel-relay-plugin-loader: babel will continue without the babel-relay-plugin!');
     module.exports = function () {
         return {
             visitor: {
             }
-        }
-    }
+        };
+    };
 }
