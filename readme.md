@@ -3,7 +3,7 @@ babel-relay-plugin-loader
 
 Versions
 ========
-The current `babel-relay-plugin-loader` version `0.7.1` is loading the `babel-relay-plugin` version `0.7.1`.
+The current `babel-relay-plugin-loader` version `0.7.3` is loading the `babel-relay-plugin` version `0.7.3`.
 
 Overview
 ========
@@ -26,7 +26,7 @@ Just `npm install --save-dev babel-relay-plugin-loader` and add the path to your
       }
     },
     ...
-    
+
 This path should be relative to the location of your `package.json`.
 
 Then you can add this plugin to your `.babelrc` file like this:
