@@ -3,7 +3,7 @@ babel-relay-plugin-loader
 
 Versions
 ========
-The current `babel-relay-plugin-loader` version `0.8.0` is loading the `babel-relay-plugin` version `0.8.0`.
+The current `babel-relay-plugin-loader` version `0.8.1` is loading the `babel-relay-plugin` version `0.8.1`.
 
 Overview
 ========
